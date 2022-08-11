@@ -3,12 +3,19 @@ import java.util.Scanner;
 public class WhatToWear {
     public static void main(String[] args) {
 
-        //Create a program that makes suggestions on what to wear based on information it gathers about the weather. The purpose of this exercise is to give you some practise with logical and conditional operators.
-        //
-        //Allow your program to collect some descriptive user input about the weather ("rainy", "sunny", "cloudy", "snow", etc) and the average temperature for the day (8, 18, 28, etc).
-        //
-        //Let your program output clothing suggestions depending on a combination of weather conditions and temperature.
-        //
-        //e.g. if it is both "rainy" and less than 12 degrees, output "wear a waterproof winter coat"
+        Scanner reader1 = new Scanner(System.in);
+        String weather = reader1.nextLine();
+
+        Scanner reader2 = new Scanner(System.in);
+        int degrees = reader2.nextInt();
+
+        if ((weather.equals("sunny") || weather.equals("cloudy"))&& (degrees > 20)){
+            System.out.println("Wear lighter clothes!");
+        } else if (weather.equals("rainy") || weather.equals("cloudy") && (degrees < 20)){
+            System.out.println("Wear a waterproof winter coat");
+        } else {
+            System.out.println("Do not go out, it is too cold!");
+        }
+
     }
 }
